@@ -1,0 +1,226 @@
+body{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  margin:0px;
+}
+
+body > *{
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+
+header{
+  display:grid;
+  grid-template-columns: 10% 70% 20%;
+  grid-template-rows: 100%;
+  max-height: 150px;
+
+  grid-template-areas: "logo . nav";
+  background-color: rgb(237, 237, 237);
+}
+
+img{
+
+  max-height: 100%;
+  grid-area: logo;
+}
+
+nav{
+grid-area: nav;
+
+display:flex;
+justify-content: center;
+align-items: center;
+gap:10px;
+}
+
+nav a{
+  font-family: 'Open Sans', sans-serif;;
+  size:16px;
+  color: rgb(17, 72, 113);
+  background-color: rgb(207, 218, 227);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom:5px;
+  text-decoration: none;
+}
+
+.content{
+  height:65vh;
+
+  display:grid;
+
+  grid-template-columns: 80% 10% 10%;
+  grid-template-rows: 5% 95%;
+
+  grid-template-areas: 
+  "textfield hideButton ."
+  "textfield options abkz"
+  ;
+}
+
+/* Überschreibe content Klasse für index Seite*/
+#contentIndex{
+  height:65vh;
+  display:flex;
+
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+
+#contentIndex :hover{
+  background-color: rgb(237, 237, 237);
+  border-radius: 40px;
+}
+
+
+.textfield{
+  grid-area: textfield;
+}
+
+#hideButton{
+  --status:show;
+
+  background-color: white;
+  border: none;
+
+  display:flex;
+
+  grid-area: hideButton;
+}
+
+.spalte{
+  grid-area: options;
+
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.listBox{
+  grid-area: abkz;
+
+  display:flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.liste{
+  overflow-y: scroll;
+}
+
+#wordCount{
+  display: none;
+}
+
+.wordCount{
+  grid-area: count;
+
+  display:flex;
+  flex-direction: column;
+}
+
+#countTableBox{
+  overflow-y: scroll;
+}
+
+#countTable{
+  width: 100%;
+  text-align: center;
+  
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+#hideCountButton{
+  background-color: white;
+  border: none;
+
+  display:flex;
+  justify-content: flex-end;
+}
+
+.buttons{
+  display:flex;
+  flex-direction: column;
+  gap:10px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ab hier mehrfach Segmentierseite spezifische Dinge*/
+#multiSpace{
+  grid-area: textfield;
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#inputArea, #outputArea{
+  flex-grow: 3;
+  border:solid;
+  overflow-y: scroll;
+}
+
+#convertSpace{
+  flex-grow:1;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Für die Startseite*/
+.largeIcon{
+  font-size: 250px !important;
+  color:rgb(17, 72, 113);
+}
+.largeIcon :visited{
+  color: rgb(17, 72, 113);
+}
+
+/* Genrelle Popups*/
+.popup{
+    visibility: hidden;
+    width: 160px;
+    height: 45px;
+    font-size: larger;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right:0px;
+    top: 30px;
+  }
+
+.Klammer{
+    visibility: hidden;
+    width: 160px;
+    height: 135px;
+    font-size: larger;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right:0px;
+    top: 30px;
+  }
