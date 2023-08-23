@@ -2,8 +2,8 @@ var tableData = [];
 
     function createTable() {
       var table = document.getElementById("myTable");
-      var columnsInput = 4;/*document.getElementById("columns");*/
-      var rowsInput = 3;/*document.getElementById("rows");*/
+      var columnsInput = document.getElementById("columns");
+      var rowsInput = document.getElementById("rows");
       var columns = parseInt(columnsInput.value);
       var rows = parseInt(rowsInput.value);
 
@@ -53,10 +53,26 @@ var tableData = [];
       tableData[row][col] = value;
     }
 
-    function deleteRow(row) {
+    function deleteRow() {
+      var deletionInput = document.getElementById("deletionInput");
+      var row = parseInt(deletionInput.value);
       var table = document.getElementById("myTable");
       table.deleteRow(row);
       tableData.splice(row, 1);
+    }
+
+    function deleteColumn() {
+      var deletionInput = document.getElementById("deletionInput");
+      var col = parseInt(deletionInput.value);
+      var table = document.getElementById("myTable");
+      var rowCount = table.childElementCount;
+      
+      for (var i = 0; i < rowCount; i++) {
+        tableData.splice(col, 1);
+      }
+      for (var i = 0; i < rowCount; i++) {
+        table.rows[i].deleteCell(col);
+     }
     }
 
     function updateRow(row) {
