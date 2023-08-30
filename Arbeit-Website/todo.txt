@@ -1,0 +1,12 @@
+- implement add row/col
+- create table from beginning with text in header and 1st col
+- export data into csv or txt ready for submitting
+- submit button and server things
+
+
+
+
+
+-----ERRORS-----------------------------------------------------------------
+- no input in textinput when deleting
+- deleting row/col when no table is present

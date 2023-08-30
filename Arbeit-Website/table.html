@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/indextable.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/indextable.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,20 +39,21 @@
             <input type="number" id="deletionInput" min="1" placeholder="Index of Row or Column">
             <button onclick="deleteRow()">Delete Row</button>
             <button onclick="deleteColumn()">Delete Column</button>
+            <button onclick="addRow()">Add 1 Row</button>
+            <button onclick="addColumn()">Add 1 Column</button>
         </div>
-        
     </div>
     <div class="buttons">
         <div id="segmentButtons">
-        <button onclick="segmentieren()">Segmentieren</button>
-        <button onclick="segmentCSV()">save as .csv</button>
-        <button onclick="segmentTXT()">save as .txt</button>
-        </div>
-        <div id="countButtons">
-        <button onclick="countWords()">count</button>
-        <button onclick="countCSV()">save as .csv</button>
+        <button onclick="workinProgress()"> submit</button>
+        <button onclick="workinProgress()"> save as .csv</button>
+        <button onclick="workinProgress()"> save as .txt</button>
         </div>
     </div>   
+
+    <div class="popup" id="popupWorkInProgress">
+        <span class="popuptext" >Diese Funktion ist noch nicht verfügbar!</span>
+    </div>
     
     <script src="./javascript/segmentier.js"></script>
     <script src="./javascript/buttons.js"></script>
