@@ -29,10 +29,73 @@
 
     <div class="content" id="content">
         <div>
-            <input type="number" id="columns" min="1" placeholder="Number of Columns">
-            <input type="number" id="rows" min="1" placeholder="Number of Rows">
-            <button onclick="createTable()">Create Table</button>
+            <h1>Contetnt Representation</h1>
+            <p>Bearbeiten Sie die Content Representation indem Sie... <br>
+            1. ... auf Grundlage Ihres fachlichen Wissens die Big Ideas einer Thematik identifizieren und als Keywords in der ersten Zeile festhalten und <br>
+            2. ... die Big Ideas vor dem Hintergrund Ihres pädagpgischen und fachdidaktischen Wissens entlang der Leitfragen spaltenweise diskutieren. <br>
+            (Es empfiehlt sich Gedanken in ausführlichen Stichpunkten oder vollständigen Sätzen festzuhalten.)</p>
+
             <table id="myTable">
+                <tr>
+                    <th>Leitfragen ↴ | Big Ideas &rarr; </th>
+                    <th><input type="text" class="header-input" placeholder="1. Big Idea"> </input></th>
+                    <th><input type="text" class="header-input" placeholder="2. Big Idea"> </input></th>
+                  </tr>
+                  <tr>
+                    <td>Was sollen die Schüler*innen wissen/können?</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
+                  <tr>
+                    <td>Was gibt es darüber hinaus inhaltlich noch zu wissen? (Inhalte, die S*S jetzt (noch) nicht brauchen)</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
+                  <tr>
+                    <td>Warum ist es wichtig, dass Schüler*innen genau das lernen?</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
+                  <tr>
+                    <td>Welche Vorgaben werden im Rahmenlehrplan/ Schulinternen Curriculum gemacht?</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
+                  <tr>
+                    <td>Welches Vorwissen besitzen die Schüler*innen zu diesem Thema?</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
+                  <tr>
+                    <td>Welche (Fehl-) Vorstellungen gibt es zu dieser Idee?</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
+                  <tr>
+                    <td>Welche Schwierigkeiten oder Einschränkungen im Zusammenhang mit der Vermittlung der Idee können auftreten?</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
+                  <tr>
+                    <td>Durch welche Faktoren (z.B. Klassenklima, Lernumgebung, etc.) kann die Vermittlung des Inhalts noch beeinflusst werden? (positiv und negativ)</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
+                  <tr>
+                    <td>Wie soll der Inhalt vermittelt werden? (z.B. Methoden, Vorgehen, Sozialformen, Experimente, Lernumgebung, etc.)</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
+                  <tr>
+                    <td>Warum soll der Inhalt auf diese Weise vermittelt werden?</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
+                  <tr>
+                    <td>Wie kann überprüft werden, was die Schüler*innen verstanden haben und wo es noch Verständnisschwierigkeiten gibt? (inkl. Bandbreite an möglichen Antworten)</td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
+                  </tr>
             </table>
         </div>
         <div>
