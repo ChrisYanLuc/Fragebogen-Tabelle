@@ -16,7 +16,7 @@
 
 
 </head>
-<body>
+<body onload="createPremadeTable()">
     <header>
         <a href="https://www.uni-potsdam.de/de/physikdidaktik/willkommen"><img src="media/logo_grey.jpg" alt="Logo" id="logo"></a>
         <nav>
@@ -27,24 +27,29 @@
         </nav>
     </header>
 
-    <div class="content" id="content">
+    <div class="table-content">
         <div>
-            <input type="number" id="columns" min="1" placeholder="Number of Columns">
-            <input type="number" id="rows" min="1" placeholder="Number of Rows">
-            <button onclick="createTable()">Create Table</button>
+            <h1>Content Representation</h1>
+            <p>Bearbeiten Sie die Content Representation indem Sie... <br>
+            1. ... auf Grundlage Ihres fachlichen Wissens die Big Ideas einer Thematik identifizieren und als Keywords in der ersten Zeile festhalten und <br>
+            2. ... die Big Ideas vor dem Hintergrund Ihres pädagogischen und fachdidaktischen Wissens entlang der Leitfragen spaltenweise diskutieren. <br>
+            (Es empfiehlt sich Gedanken in ausführlichen Stichpunkten oder vollständigen Sätzen festzuhalten.)</p>
+
             <table id="myTable">
             </table>
         </div>
-        <div>
-            <input type="number" id="deletionInput" min="1" placeholder="Index of Row or Column">
-            <button onclick="deleteRow()">Delete Row</button>
-            <button onclick="deleteColumn()">Delete Column</button>
-            <button onclick="addRow()">Add 1 Row</button>
-            <button onclick="addColumn()">Add 1 Column</button>
+        <div class="button-area">
+            <div><input class="input-container" type="number" id="deletionInput" name="quantity" min="1" placeholder="Index of Row or Column"></div>
+            <div><button onclick="deleteRow()">Delete Row</button></div>
+            <div><button onclick="deleteColumn()">Delete Column</button></div>
+            <div><button onclick="addRow()">Add 1 Row</button></div>
+            <div><button onclick="addColumn()">Add 1 Column</button></div>
         </div>
     </div>
     <div class="buttons">
         <div id="segmentButtons">
+        <button onclick="createPremadeTable()"> Test new function</button>
+        <button onclick="displayData()"> log TableData</button>
         <button onclick="workinProgress()"> submit</button>
         <button onclick="workinProgress()"> save as .csv</button>
         <button onclick="workinProgress()"> save as .txt</button>
