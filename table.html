@@ -16,7 +16,7 @@
 
 
 </head>
-<body>
+<body onload="createPremadeTable()">
     <header>
         <a href="https://www.uni-potsdam.de/de/physikdidaktik/willkommen"><img src="media/logo_grey.jpg" alt="Logo" id="logo"></a>
         <nav>
@@ -27,87 +27,29 @@
         </nav>
     </header>
 
-    <div class="content" id="content">
+    <div class="table-content">
         <div>
-            <h1>Contetnt Representation</h1>
+            <h1>Content Representation</h1>
             <p>Bearbeiten Sie die Content Representation indem Sie... <br>
             1. ... auf Grundlage Ihres fachlichen Wissens die Big Ideas einer Thematik identifizieren und als Keywords in der ersten Zeile festhalten und <br>
-            2. ... die Big Ideas vor dem Hintergrund Ihres pädagpgischen und fachdidaktischen Wissens entlang der Leitfragen spaltenweise diskutieren. <br>
+            2. ... die Big Ideas vor dem Hintergrund Ihres pädagogischen und fachdidaktischen Wissens entlang der Leitfragen spaltenweise diskutieren. <br>
             (Es empfiehlt sich Gedanken in ausführlichen Stichpunkten oder vollständigen Sätzen festzuhalten.)</p>
 
             <table id="myTable">
-                <tr>
-                    <th>Leitfragen ↴ | Big Ideas &rarr; </th>
-                    <th><input type="text" class="header-input" placeholder="1. Big Idea"> </input></th>
-                    <th><input type="text" class="header-input" placeholder="2. Big Idea"> </input></th>
-                  </tr>
-                  <tr>
-                    <td>Was sollen die Schüler*innen wissen/können?</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
-                  <tr>
-                    <td>Was gibt es darüber hinaus inhaltlich noch zu wissen? (Inhalte, die S*S jetzt (noch) nicht brauchen)</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
-                  <tr>
-                    <td>Warum ist es wichtig, dass Schüler*innen genau das lernen?</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
-                  <tr>
-                    <td>Welche Vorgaben werden im Rahmenlehrplan/ Schulinternen Curriculum gemacht?</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
-                  <tr>
-                    <td>Welches Vorwissen besitzen die Schüler*innen zu diesem Thema?</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
-                  <tr>
-                    <td>Welche (Fehl-) Vorstellungen gibt es zu dieser Idee?</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
-                  <tr>
-                    <td>Welche Schwierigkeiten oder Einschränkungen im Zusammenhang mit der Vermittlung der Idee können auftreten?</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
-                  <tr>
-                    <td>Durch welche Faktoren (z.B. Klassenklima, Lernumgebung, etc.) kann die Vermittlung des Inhalts noch beeinflusst werden? (positiv und negativ)</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
-                  <tr>
-                    <td>Wie soll der Inhalt vermittelt werden? (z.B. Methoden, Vorgehen, Sozialformen, Experimente, Lernumgebung, etc.)</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
-                  <tr>
-                    <td>Warum soll der Inhalt auf diese Weise vermittelt werden?</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
-                  <tr>
-                    <td>Wie kann überprüft werden, was die Schüler*innen verstanden haben und wo es noch Verständnisschwierigkeiten gibt? (inkl. Bandbreite an möglichen Antworten)</td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                    <td contenteditable="true" class="editable-cell" input="updateCell()"></td>
-                  </tr>
             </table>
         </div>
-        <div>
-            <input type="number" id="deletionInput" min="1" placeholder="Index of Row or Column">
-            <button onclick="deleteRow()">Delete Row</button>
-            <button onclick="deleteColumn()">Delete Column</button>
-            <button onclick="addRow()">Add 1 Row</button>
-            <button onclick="addColumn()">Add 1 Column</button>
+        <div class="button-area">
+            <div><input class="input-container" type="number" id="deletionInput" name="quantity" min="1" placeholder="Index of Row or Column"></div>
+            <div><button onclick="deleteRow()">Delete Row</button></div>
+            <div><button onclick="deleteColumn()">Delete Column</button></div>
+            <div><button onclick="addRow()">Add 1 Row</button></div>
+            <div><button onclick="addColumn()">Add 1 Column</button></div>
         </div>
     </div>
     <div class="buttons">
         <div id="segmentButtons">
+        <button onclick="createPremadeTable()"> Test new function</button>
+        <button onclick="displayData()"> log TableData</button>
         <button onclick="workinProgress()"> submit</button>
         <button onclick="workinProgress()"> save as .csv</button>
         <button onclick="workinProgress()"> save as .txt</button>

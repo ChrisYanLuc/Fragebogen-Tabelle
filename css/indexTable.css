@@ -1,3 +1,12 @@
+.table-content{
+  
+
+  display:grid;
+
+  grid-template-columns: 80% 20%;
+
+}
+
 .container{
     width: 60%;
     margin: 0 auto;
@@ -43,6 +52,19 @@
   
   button:hover {
   background-color: #3e8e41;
+  }
+
+  .button-area {
+    display: flex;
+    background-color: #f1f1f1;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: top;
+    align-items: center;
+  }
+
+  .button-area > div{
+    background-color: #f1f1f1;
   }
   
   table {
