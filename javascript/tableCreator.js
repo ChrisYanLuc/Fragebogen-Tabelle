@@ -192,7 +192,7 @@ function displayData() {
 }
 
 
-function workinProgress() {
+function workInProgress() {
   const popup = document.getElementById("popupWorkInProgress");
   popup.style.visibility = 'visible';
   setTimeout(hide, 2000, popup);
