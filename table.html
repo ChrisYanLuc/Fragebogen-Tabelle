@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,31 +10,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/indexTable.css">
-    
 
-
+    <script src="./javascript/all_text.js"></script>
 
 </head>
-<body onload="createPremadeTable()">
+<body onload="createPremadeTable( get_text('leitfragen', write_html=false) )">
     <header>
         <a href="https://www.uni-potsdam.de/de/physikdidaktik/willkommen"><img src="media/logo_grey.jpg" alt="Logo" id="logo"></a>
         <nav>
-            <a href="./index.html">Start</a>
-            <a href="./solo.html">Einzel</a>
-            <a href="./multi.html">Mehrzahl</a>
-            <a href="./table.html">Tabelle</a>        
+            <a href="./index.html"><script>get_text('navigation', write_html=true, contentIndex=0)</script></a>
+            <a href="./solo.html"><script>get_text('navigation', write_html=true, contentIndex=1)</script></a>
+            <a href="./multi.html"><script>get_text('navigation', write_html=true, contentIndex=2)</script></a>
+            <a href="./table.html"><script>get_text('navigation', write_html=true, contentIndex=3)</script></a>
+            <form><select id="language" name="language">
+                <option value="de">deutsch</option>
+                <option value="en">english</option>
+            </select></form>
+            <script> var languageSetting = document.getElementById("language"); languageSetting.onchange = setLanguage; </script> <! dispatchEvent(event);>
         </nav>
     </header>
 
     <div class="table-content">
         <div>
-            <h1>Content Representation</h1>
-            <p>Bearbeiten Sie die Content Representation indem Sie... <br>
+            <h1><script> get_text('header', write_html=true); </script> </h1>
+            <p><script> get_text('description', write_html=true, contentIndex=0); </script> <br>
             <ol>
-             <li>... auf Grundlage Ihres fachlichen Wissens die Big Ideas einer Thematik identifizieren und als Keywords in der ersten Zeile festhalten und</li>
-             <li>... die Big Ideas vor dem Hintergrund Ihres pädagogischen und fachdidaktischen Wissens entlang der Leitfragen spaltenweise diskutieren. </li>
+             <li><script> get_text('description', write_html=true, contentIndex=1); </script></li>
+             <li><script> get_text('description', write_html=true, contentIndex=2); </script> </li>
             </ol>
-            (Es empfiehlt sich Gedanken in ausführlichen Stichpunkten oder vollständigen Sätzen festzuhalten.)</p>
+            <script> get_text('description', write_html=true, contentIndex=3); </script></p>
         </div>
         <div class="button-area">
             <div><input class="input-container" type="number" id="deletionInput" name="quantity" min="1" placeholder="Index of deletion"></div>
@@ -53,6 +57,7 @@
         <button onclick="workInProgress()"> submit</button>
         <button onclick="fragebogenZuCSV()"> save as .csv</button>
         <button onclick="fragebogenZuTXT()"> save as .txt</button>
+        <button onclick="submit()"> create pseudonym</button>
         </div>
     </div>   
 
@@ -60,9 +65,11 @@
         <span class="popuptext" >Diese Funktion ist noch nicht verfügbar.</span>
     </div>
     
+    <div> <p id="demo"> </p> </div>
 
     <script src="./javascript/buttons.js"></script>
     <script src="./javascript/tableCreator.js"></script>
+    
 
 </body>
 </html>
