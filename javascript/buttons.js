@@ -2,14 +2,14 @@
 
 function segmentCSV(){
     let text = document.getElementById("textfield").value;
-    let file = new File([text],"segmentiert")
-    download("csv",file)
+    let file = new File([text],"segmentiert");
+    download("csv",file);
 }
 
 function segmentTXT(){
     let text = document.getElementById("textfield").value;
-    let file = new File([text],"segmentiert")
-    download("txt",file)
+    let file = new File([text],"segmentiert");
+    download("txt",file);
 }
 
 function countCSV(){
@@ -86,4 +86,37 @@ function fragebogenZuTXT(){
 
     let file = new File([tableString],"fragebogentabelle")
     download("csv",file)
+  }
+
+
+  function submit(){
+    let text;
+
+    //creating pseudonym for saving submitted data
+    let ableToExit = false;
+    while (!ableToExit){
+        let pseudonym = prompt("Bitte geben Sie hier Ihr Pseudonym ein. Das Pseudonym ergibt sich wie folgt:\n" +
+                        "1. Verwenden Sie die ersten beiden Buchstaben des Vornamens Ihrer Mutter,\n" +
+                        "2. die ersten beiden Buchstaben des Vornamens Ihres Vaters,\n" +
+                        "3. die ersten beiden Buchstaben Ihres Geburtsortes, sowie\n" +
+                        "4. die ersten beiden Ziffern Ihres Geburtsdatums.",
+                         "Alice, Bob, Potsdam, 01.02.2000 --> ALBOPO01");
+        // strip spaces from pseudonym
+        // check for general correctness of pseudonym
+
+        if (pseudonym == null || pseudonym == "") 
+        {
+            text = "User cancelled the prompt.";
+            ableToExit = true;
+        } else if (pseudonym.length != 8)
+        {
+            alert("Die Länge des Pseodonms stimmt nicht. Bitte achten Sie auch darauf, dass keine Leerzeichen dazwischen sind.");
+        } else {
+            text = "Das Pseudonym lautet wie folgt: " + pseudonym;
+            ableToExit = true;
+        }
+    }
+    
+    document.getElementById("demo").innerHTML = text;
+
   }

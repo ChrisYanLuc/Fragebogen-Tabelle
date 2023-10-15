@@ -1,7 +1,9 @@
 var tableData = [];
 
-function createPremadeTable(){
+function createPremadeTable(leitfragen){
   let table = document.getElementById("myTable");
+
+  /*
   var leitfragen = ["Was sollen die Schüler*innen wissen/können?", 
   "Was gibt es darüber hinaus inhaltlich noch zu wissen? (Inhalte, die S*S jetzt (noch) nicht brauchen)", 
   "Warum ist es wichtig, dass Schüler*innen genau das lernen?", 
@@ -13,6 +15,19 @@ function createPremadeTable(){
   "Wie soll der Inhalt vermittelt werden? (z.B. Methoden, Vorgehen, Sozialformen, Experimente, Lernumgebung, etc.)", 
   "Warum soll der Inhalt auf diese Weise vermittelt werden?", 
   "Wie kann überprüft werden, was die Schüler*innen verstanden haben und wo es noch Verständnisschwierigkeiten gibt? (inkl. Bandbreite an möglichen Antworten)"];
+
+  var leitfragen = ["What do you want pupils to know/be able to do?", 
+  "What else is there to know about the content? (Content that S*S does not (yet) need)", 
+  "Why is it important for students to learn just that?", 
+  "What specifications are made in the framework curriculum/internal school curriculum?", 
+  "What prior knowledge do the students have on this topic?", 
+  "What are the (mis)conceptions of this idea?", 
+  "What difficulties or limitations related to communicating the idea may arise?", 
+  "What other factors (e.g., classroom climate, learning environment, etc.) can influence the teaching of the content? (positive and negative)", 
+  "How should the content be taught? (e.g. methods, procedure, social forms, experiments, learning environment, etc.)", 
+  "Warum soll der Inhalt auf diese Weise vermittelt werden?", 
+  "How to check what the students have understood and where there are still difficulties in understanding? (incl. range of possible answers)"];
+  */
   
   let columns = 3;
 
@@ -110,7 +125,7 @@ function deleteColumn() {
   let rowCount = table.rows.length;
   let deletionInput = document.getElementById("deletionInput");
   let col = parseInt(deletionInput.value);
-  console.log(col);
+  //console.log(col);
   if (isNaN(col)){
     window.alert("Bitte gib eine Nummer größer als 0 und kleiner gleich " + (tableData[0].length-1) );
     return;
